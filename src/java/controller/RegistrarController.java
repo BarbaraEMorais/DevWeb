@@ -78,6 +78,7 @@ public class RegistrarController extends HttpServlet {
             throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
+        //System.out.println(id);
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String papel = request.getParameter("papel");
@@ -114,6 +115,7 @@ public class RegistrarController extends HttpServlet {
             
              Usuario usuario = new Usuario(nome,cpf,papel,senha);
              UsuarioDAO usuarioDAO = new UsuarioDAO();
+             usuario.setId(id);
 
             try {
                 switch (btnEnviar) {
