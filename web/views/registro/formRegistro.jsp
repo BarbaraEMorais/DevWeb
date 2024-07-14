@@ -36,7 +36,7 @@
                     if ((msgError != null) && (!msgError.isEmpty())) {%>
                 <div class="alert alert-danger" role="alert">
                     <%= msgError%>
-                </div>
+                </div><%}%>
                 <form action="/aplicacaoMVC/RegistrarController" method="POST">
                     <input type="hidden" name="id" value="<%=usuario.getId()%>" class="form-control">
                     <div class="mb-3">
@@ -62,7 +62,7 @@
 
                         </div>
                     </div>                                           
-                </form>
+                </form> 
             </div>
         </div>
         <script src="views/bootstrap/bootstrap.bundle.min.js"></script>

@@ -64,15 +64,15 @@ public class UsuarioDAO {
         }
     }
 
-    public void Alterar(Usuario Usuario) throws Exception {
+    public void Alterar(Usuario usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE funcionarios SET nome = ?, cpf = ?, papel = ?, senha = ?  WHERE ID = ? ");
-            sql.setString(1, Usuario.getNome());
-            sql.setString(2, Usuario.getCpf());
-            sql.setString(3, Usuario.getPapel());
-            sql.setString(4, Usuario.getSenha());
-            sql.setInt(5, Usuario.getId());
+            sql.setString(1, usuario.getNome());
+            sql.setString(2, usuario.getCpf());
+            sql.setString(3, usuario.getPapel());
+            sql.setString(4, usuario.getSenha());
+            sql.setInt(5, usuario.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {
@@ -82,11 +82,11 @@ public class UsuarioDAO {
         }
     }
 
-    public void Excluir(Usuario Usuario) throws Exception {
+    public void Excluir(Usuario usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM funcionarios WHERE ID = ? ");
-            sql.setInt(1, Usuario.getId());
+            sql.setInt(1, usuario.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {
