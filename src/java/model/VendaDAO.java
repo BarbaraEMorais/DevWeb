@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import entidade.Venda;
+import java.sql.Date;
 
 /*
 -- Estrutura da tabela `usuarios`
@@ -26,12 +27,12 @@ public class VendaDAO {
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO vendas (quantidade_venda, data_venda, valor_venda, id_cliente, id_produto, id_funcionario)"
                     + " VALUES (?,?,?,?,?,?)");
-            sql.setString(1, venda.getQuantidade_venda());
-            sql.setString(2, venda.getData_venda());
-            sql.setString(3, venda.getValor_venda());
-            sql.setString(4, venda.getId_cliente());
-            sql.setString(4, venda.getId_produto());
-            sql.setString(4, venda.getId_funcionario());
+            sql.setInt(1, venda.getQuantidade_venda());
+            sql.setDate(2, (Date) venda.getData_venda());
+            sql.setFloat(3, venda.getValor_venda());
+            sql.setInt(4, venda.getId_cliente());
+            sql.setInt(4, venda.getId_produto());
+            sql.setInt(4, venda.getId_funcionario());
             sql.executeUpdate();
 
         } catch (SQLException e) {
@@ -51,12 +52,12 @@ public class VendaDAO {
             if (resultado != null) {
                 while (resultado.next()) {
                     venda.setId(Integer.parseInt(resultado.getString("ID")));
-                    venda.setQuantidade_venda(resultado.getString("quantidade_venda"));
-                    venda.setData_venda(resultado.getString("data_venda"));
-                    venda.setValor_venda(resultado.getString("valor_venda"));
-                    venda.setId_cliente(resultado.getString("id_cliente"));
-                    venda.setId_produto(resultado.getString("id_produto"));
-                    venda.setId_funcionario(resultado.getString("id_funcionario"));
+                    venda.setQuantidade_venda(resultado.getInt("quantidade_venda"));
+                    venda.setData_venda(resultado.getDate("data_venda"));
+                    venda.setValor_venda(resultado.getFloat("valor_venda"));
+                    venda.setId_cliente(resultado.getInt("id_cliente"));
+                    venda.setId_produto(resultado.getInt("id_produto"));
+                    venda.setId_funcionario(resultado.getInt("id_funcionario"));
                 }
             }
             return venda;
@@ -72,12 +73,12 @@ public class VendaDAO {
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE vendas SET quantidade_venda = ?, data_venda = ?, valor_venda = ?, id_cliente = ?, id_produto = ?, id_funcionario = ?  WHERE ID = ? ");
-            sql.setString(1, venda.getQuantidade_venda());
-            sql.setString(2, venda.getData_venda());
-            sql.setString(3, venda.getValor_venda());
-            sql.setString(4, venda.getId_cliente());
-            sql.setString(5, venda.getId_produto());
-            sql.setString(6, venda.getId_produto());
+            sql.setInt(1, venda.getQuantidade_venda());
+            sql.setDate(2, (Date) venda.getData_venda());
+            sql.setFloat(3, venda.getValor_venda());
+            sql.setInt(4, venda.getId_cliente());
+            sql.setInt(5, venda.getId_produto());
+            sql.setInt(6, venda.getId_produto());
             sql.setInt(7, venda.getId());
             sql.executeUpdate();
 
@@ -112,12 +113,12 @@ public class VendaDAO {
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado != null) {
                 while (resultado.next()) {
-                    Venda venda = new Venda(resultado.getString("quantidade_venda"),
-                            resultado.getString("data_venda"),
-                            resultado.getString("valor_venda"),
-                            resultado.getString("id_cliente"),
-                            resultado.getString("id_produto"),
-                            resultado.getString("id_funcionario"));
+                    Venda venda = new Venda(resultado.getInt("quantidade_venda"),
+                            resultado.getDate("data_venda"),
+                            resultado.getFloat("valor_venda"),
+                            resultado.getInt("id_cliente"),
+                            resultado.getInt("id_produto"),
+                            resultado.getInt("id_funcionario"));
                     venda.setId(Integer.parseInt(resultado.getString("ID")));
                     meusVendas.add(venda);
                 }

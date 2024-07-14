@@ -17,7 +17,7 @@
             <jsp:include page="../comum/menu.jsp" />
             <div class="col-sm-6 offset-3 mt-5">
 
-                <h3>Registro de Usuario</h3>
+                <h3>Registro de Cliente</h3>
                 <%
                         Cliente cliente = (Cliente) request.getAttribute("cliente");
                         String acao = (String) request.getAttribute("acao");
@@ -46,26 +46,26 @@
                         <label for="cpf" class="form-label">CPF</label>
                         <input type="text" name="nome" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCpf()%>" class="form-control" placeholder="Seu nome">
                     
-                        <label for="cpf" class="form-label">Endereço</label>
-                        <input type="text" name="cpf" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=cliente.getEndereco()%>" placeholder="999.999.999-99">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" name="endereco" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=cliente.getEndereco()%>" placeholder="999.999.999-99">
                     
-                        <label for="senha" class="form-label">Bairro</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getBairro()%>" class="form-control">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" name="bairro" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getBairro()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">Cidade</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCidade()%>" class="form-control">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" name="cidade" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCidade()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">UF</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getUf()%>" class="form-control">
+                        <label for="uf" class="form-label">UF</label>
+                        <input type="text" name="uf" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getUf()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">CEP</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCep()%>" class="form-control">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="text" name="cep" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCep()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">Telefone</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getTelefone()%>" class="form-control">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" name="telefone" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getTelefone()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">E-mail</label>
-                        <input type="text" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getEmail()%>" class="form-control">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="text" name="email" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getEmail()%>" class="form-control">
                     
                     </div>
                     <div class="row">
