@@ -67,7 +67,7 @@ public class UsuarioDAO {
     public void Alterar(Usuario Usuario) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE funcionarios SET nome = ?, cpf = ?, endereco = ?, senha = ?  WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE funcionarios SET nome = ?, cpf = ?, papel = ?, senha = ?  WHERE ID = ? ");
             sql.setString(1, Usuario.getNome());
             sql.setString(2, Usuario.getCpf());
             sql.setString(3, Usuario.getPapel());
@@ -97,7 +97,8 @@ public class UsuarioDAO {
     }
 
     public ArrayList<Usuario> ListaDeUsuarios() {
-        ArrayList<Usuario> meusUsuarios = new ArrayList();
+        ArrayList<Usuario> meusUsuarios
+                = new ArrayList();
         Conexao conexao = new Conexao();
         try {
             String selectSQL = "SELECT * FROM funcionarios order by nome";
