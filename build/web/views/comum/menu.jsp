@@ -24,7 +24,7 @@
                             
                             <% if("1".equals(usuarioLogado.getPapel())){%>
                                 <a class="nav-link" href="/aplicacaoMVC/RegistroCliente?acao=Listar">Clientes</a>                       
-                                <a class="nav-link" href="/aplicacaoMVC/RegistroCliente?acao=Listar">Vendas</a>                       
+                                <a class="nav-link" href="/aplicacaoMVC/RegistroVenda?acao=Listar">Vendas</a>                       
 
                             <%}
                             %>

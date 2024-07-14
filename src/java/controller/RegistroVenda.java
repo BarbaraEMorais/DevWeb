@@ -1,6 +1,7 @@
-//package controller;*
-import entidade.Cliente;
+/*package controller;*/
+
 import java.util.ArrayList;
+import entidade.Venda;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,14 +11,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.ClienteDAO;
+import model.VendaDAO;
 
 /**
  *
  * @author Leonardo
  */
-@WebServlet(name = "RegistroCliente", urlPatterns = {"/RegistroCliente"})
-public class RegistroCliente extends HttpServlet {
+@WebServlet(name = "RegistroVenda", urlPatterns = {"/RegistroVenda"})
+public class RegistroVenda extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,15 +29,15 @@ public class RegistroCliente extends HttpServlet {
 //        rd.forward(request, response);
         
         String acao = (String) request.getParameter("acao");
-        Cliente cliente = new Cliente();
-        ClienteDAO clienteDAO = new ClienteDAO();
+        Venda venda = new Venda();
+        VendaDAO vendaDAO = new VendaDAO();
         RequestDispatcher rd;
         switch (acao) {
             case "Listar":
-                ArrayList<Cliente> listaClientes = clienteDAO.ListaDeClientes();
-                request.setAttribute("listaClientes", listaClientes);
+                ArrayList<Venda> listaVendas = vendaDAO.ListaDeVendas();
+                request.setAttribute("listaVendas", listaVendas);
 
-                rd = request.getRequestDispatcher("/views/clientes/listaClientes.jsp");
+                rd = request.getRequestDispatcher("/views/vendas/listaVendas.jsp");
                 rd.forward(request, response);
 
                 break;
@@ -47,26 +48,26 @@ public class RegistroCliente extends HttpServlet {
                 int id = Integer.parseInt(request.getParameter("id"));
             {
                 try {
-                    cliente = clienteDAO.getCliente(id);
+                    venda = vendaDAO.getVenda(id);
                 } catch (Exception ex) {
-                    Logger.getLogger(RegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(RegistroVenda.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
-                request.setAttribute("cliente", cliente);
+                request.setAttribute("venda", venda);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
 
-                rd = request.getRequestDispatcher("/views/clientes/formClientes.jsp");
+                rd = request.getRequestDispatcher("/views/vendas/formVendas.jsp");
                 rd.forward(request, response);
                 break;
 
             case "Incluir":
-                request.setAttribute("cliente", cliente);
+                request.setAttribute("venda", venda);
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
 
-                rd = request.getRequestDispatcher("/views/clientes/formClientes.jsp");
+                rd = request.getRequestDispatcher("/views/vandas/formVendas.jsp");
                 rd.forward(request, response);
         }
 
@@ -77,74 +78,72 @@ public class RegistroCliente extends HttpServlet {
             throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
-        String nome = request.getParameter("nome");
-        String cpf = request.getParameter("cpf");
-        String endereco = request.getParameter("endereco");
-        String bairro = request.getParameter("bairro");
-        String cidade = request.getParameter("cidade");
-        String uf = request.getParameter("uf");
-        String cep = request.getParameter("cep");
-        String telefone = request.getParameter("telefone");
-        String email = request.getParameter("email");
-        String btnEnvia = request.getParameter("btnEnvia");
+        //System.out.println(id);
+        String quantidade_venda = request.getParameter("quantidade_venda");
+        String data_venda = request.getParameter("data_venda");
+        String valor_venda = request.getParameter("valor_venda");
+        String id_cliente = request.getParameter("id_cliente");
+        String id_produto = request.getParameter("id_produto");
+        String id_funcionario = request.getParameter("id_funcionario");
+        String btnEnviar = request.getParameter("btnEnviar");
 
         RequestDispatcher rd;
 
-        if (nome.isEmpty() || cpf.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
-            Cliente cliente = new Cliente();
-            switch (btnEnvia) {
+        if (quantidade_venda.isEmpty() || data_venda.isEmpty() || valor_venda.isEmpty() || id_cliente.isEmpty() || id_produto.isEmpty() || id_funcionario.isEmpty()) {
+            Venda venda = new Venda();
+            switch (btnEnviar) {
                 case "Alterar":
                 case "Excluir":
                     try {
-                    ClienteDAO clienteDAO = new ClienteDAO();
-                    cliente = clienteDAO.getCliente(id);
+                    VendaDAO vendaDAO = new VendaDAO();
+                    venda = vendaDAO.getVenda(id);
 
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
-                    throw new RuntimeException("Falha em uma query para cadastro de Cliente");
+                    throw new RuntimeException("Falha em uma query para cadastro de Venda");
                 }
                 break;
             }
 
-            request.setAttribute("cliente", cliente);
-            request.setAttribute("acao", btnEnvia);
+            request.setAttribute("venda", venda);
+            request.setAttribute("acao", btnEnviar);
 
             request.setAttribute("msgError", "É necessário preencher todos os campos");
 
-            rd = request.getRequestDispatcher("/views/clientes/formClientes.jsp");
+            rd = request.getRequestDispatcher("/views/vendas/formVendas.jsp");
             rd.forward(request, response);
 
         } else {
             
-             Cliente cliente = new Cliente(nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
-             ClienteDAO clienteDAO = new ClienteDAO();
-             cliente.setId(id);
+             Venda venda = new Venda(quantidade_venda,data_venda,valor_venda,id_cliente,id_produto,id_funcionario);
+             VendaDAO vendaDAO = new VendaDAO();
+             venda.setId(id);
 
             try {
-                switch (btnEnvia) {
+                switch (btnEnviar) {
                     case "Incluir":
-                        clienteDAO.Inserir(cliente);
+                        vendaDAO.Inserir(venda);
                         request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
                         break;
                     case "Alterar":
-                        clienteDAO.Alterar(cliente);
+                        vendaDAO.Alterar(venda);
                         request.setAttribute("msgOperacaoRealizada", "Alteração realizada com sucesso");
                         break;
                     case "Excluir":
-                        clienteDAO.Excluir(cliente);
+                        vendaDAO.Excluir(venda);
                         request.setAttribute("msgOperacaoRealizada", "Exclusão realizada com sucesso");
                         break;
                 }
 
-                request.setAttribute("link", "/aplicacaoMVC/RegistroCliente?acao=Listar");
+                request.setAttribute("link", "/aplicacaoMVC/RegistroVenda?acao=Listar");
                 rd = request.getRequestDispatcher("/views/comum/showMessage.jsp");
                 rd.forward(request, response);
 
             } catch (IOException | ServletException ex) {
                 System.out.println(ex.getMessage());
-                throw new RuntimeException("Falha em uma query para cadastro de cliente");
+                throw new RuntimeException("Falha em uma query para cadastro de Venda");
             } catch (Exception ex) {
-                Logger.getLogger(RegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RegistroVenda.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

@@ -35,6 +35,7 @@ public class RegistroFornecedor extends HttpServlet {
         switch (acao) {
             case "Listar":
                 ArrayList<Fornecedor> listaFornecedores = fornecedorDAO.ListaDeFornecedores();
+                System.out.println(listaFornecedores);
                 request.setAttribute("listaFornecedores", listaFornecedores);
 
                 rd = request.getRequestDispatcher("/views/fornecedores/listaFornecedores.jsp");

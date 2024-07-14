@@ -54,7 +54,7 @@ public class FornecedorDAO {
                     fornecedor.setBairro(resultado.getString("bairro"));
                     fornecedor.setCidade(resultado.getString("cidade"));
                     fornecedor.setUf(resultado.getString("uf"));
-                    fornecedor.setCep(resultado.getString("Cep"));
+                    fornecedor.setCep(resultado.getString("cep"));
                     fornecedor.setTelefone(resultado.getString("telefone"));
                     fornecedor.setEmail(resultado.getString("email"));                    
                 }
@@ -117,7 +117,7 @@ public class FornecedorDAO {
                 while (resultado.next()) {
                     
                     Fornecedor fornecedor = new Fornecedor(resultado.getString("razao_social"),
-                            resultado.getString("cnpj"),
+                            resultado.getString("CNPJ"),
                             resultado.getString("endereco"),
                             resultado.getString("bairro"),
                             resultado.getString("cidade"),

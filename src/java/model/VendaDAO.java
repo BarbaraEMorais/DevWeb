@@ -24,12 +24,14 @@ public class VendaDAO {
     public void Inserir(Venda venda) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO Vendas (nome, cpf, papel, senha)"
-                    + " VALUES (?,?,?,?)");
-            sql.setString(1, venda.getNome());
-            sql.setString(2, venda.getCpf());
-            sql.setString(3, venda.getPapel());
-            sql.setString(4, venda.getSenha());
+            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO vendas (quantidade_venda, data_venda, valor_venda, id_cliente, id_produto, id_funcionario)"
+                    + " VALUES (?,?,?,?,?,?)");
+            sql.setString(1, venda.getQuantidade_venda());
+            sql.setString(2, venda.getData_venda());
+            sql.setString(3, venda.getValor_venda());
+            sql.setString(4, venda.getId_cliente());
+            sql.setString(4, venda.getId_produto());
+            sql.setString(4, venda.getId_funcionario());
             sql.executeUpdate();
 
         } catch (SQLException e) {
@@ -43,16 +45,18 @@ public class VendaDAO {
         Conexao conexao = new Conexao();
         try {
             Venda venda = new Venda();
-            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM Vendas WHERE ID = ? ");
+            PreparedStatement sql = conexao.getConexao().prepareStatement("SELECT * FROM vendas WHERE ID = ? ");
             sql.setInt(1, id);
             ResultSet resultado = sql.executeQuery();
             if (resultado != null) {
                 while (resultado.next()) {
                     venda.setId(Integer.parseInt(resultado.getString("ID")));
-                    venda.setNome(resultado.getString("NOME"));
-                    venda.setCpf(resultado.getString("CPF"));
-                    venda.setPapel(resultado.getString("papel"));
-                    venda.setSenha(resultado.getString("SENHA"));
+                    venda.setQuantidade_venda(resultado.getString("quantidade_venda"));
+                    venda.setData_venda(resultado.getString("data_venda"));
+                    venda.setValor_venda(resultado.getString("valor_venda"));
+                    venda.setId_cliente(resultado.getString("id_cliente"));
+                    venda.setId_produto(resultado.getString("id_produto"));
+                    venda.setId_funcionario(resultado.getString("id_funcionario"));
                 }
             }
             return venda;
@@ -67,12 +71,14 @@ public class VendaDAO {
     public void Alterar(Venda venda) throws Exception {
         Conexao conexao = new Conexao();
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE vendas SET nome = ?, cpf = ?, papel = ?, senha = ?  WHERE ID = ? ");
-            sql.setString(1, venda.getNome());
-            sql.setString(2, venda.getCpf());
-            sql.setString(3, venda.getPapel());
-            sql.setString(4, venda.getSenha());
-            sql.setInt(5, venda.getId());
+            PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE vendas SET quantidade_venda = ?, data_venda = ?, valor_venda = ?, id_cliente = ?, id_produto = ?, id_funcionario = ?  WHERE ID = ? ");
+            sql.setString(1, venda.getQuantidade_venda());
+            sql.setString(2, venda.getData_venda());
+            sql.setString(3, venda.getValor_venda());
+            sql.setString(4, venda.getId_cliente());
+            sql.setString(5, venda.getId_produto());
+            sql.setString(6, venda.getId_produto());
+            sql.setInt(7, venda.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {
@@ -106,16 +112,18 @@ public class VendaDAO {
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado != null) {
                 while (resultado.next()) {
-                    Venda venda = new Usuario(resultado.getString("NOME"),
-                            resultado.getString("CPF"),
-                            resultado.getString("PAPEL"),
-                            resultado.getString("SENHA"));
+                    Venda venda = new Venda(resultado.getString("quantidade_venda"),
+                            resultado.getString("data_venda"),
+                            resultado.getString("valor_venda"),
+                            resultado.getString("id_cliente"),
+                            resultado.getString("id_produto"),
+                            resultado.getString("id_funcionario"));
                     venda.setId(Integer.parseInt(resultado.getString("ID")));
                     meusVendas.add(venda);
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Query de select (ListaDeUsuarios) incorreta");
+            throw new RuntimeException("Query de select (ListaDeVendas) incorreta");
         } finally {
             conexao.closeConexao();
         }
