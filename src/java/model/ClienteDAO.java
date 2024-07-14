@@ -68,20 +68,20 @@ public class ClienteDAO {
         }
     }
 
-    public void Alterar(Cliente Cliente) throws Exception {
+    public void Alterar(Cliente cliente) throws Exception {
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE clientes SET nome = ?, cpf = ?, endereco = ?, bairro = ?, cidade = ?, uf = ?, cep = ?, telefone = ?, email = ? WHERE ID = ? ");
-            sql.setString(1, Cliente.getNome());
-            sql.setString(2, Cliente.getCpf());
-            sql.setString(3, Cliente.getEndereco());
-            sql.setString(4, Cliente.getBairro());
-            sql.setString(5, Cliente.getCidade());
-            sql.setString(6, Cliente.getUf());
-            sql.setString(7, Cliente.getCep());
-            sql.setString(8, Cliente.getTelefone());
-            sql.setString(9, Cliente.getEmail());          
-            sql.setInt(10, Cliente.getId());
+            sql.setString(1, cliente.getNome());
+            sql.setString(2, cliente.getCpf());
+            sql.setString(3, cliente.getEndereco());
+            sql.setString(4, cliente.getBairro());
+            sql.setString(5, cliente.getCidade());
+            sql.setString(6, cliente.getUf());
+            sql.setString(7, cliente.getCep());
+            sql.setString(8, cliente.getTelefone());
+            sql.setString(9, cliente.getEmail());          
+            sql.setInt(10, cliente.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {
@@ -91,11 +91,11 @@ public class ClienteDAO {
         }
     }
 
-    public void Excluir(Cliente Usuario) throws Exception {
+    public void Excluir(Cliente cliente) throws Exception {
         Conexao conexao = new Conexao();
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("DELETE FROM clientes WHERE ID = ? ");
-            sql.setInt(1, Usuario.getId());
+            sql.setInt(1, cliente.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {

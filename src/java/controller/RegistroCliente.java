@@ -86,13 +86,13 @@ public class RegistroCliente extends HttpServlet {
         String cep = request.getParameter("cep");
         String telefone = request.getParameter("telefone");
         String email = request.getParameter("email");
-        String btnEnviar = request.getParameter("btnEnviar");
+        String btnEnvia = request.getParameter("btnEnvia");
 
         RequestDispatcher rd;
 
-        if (nome.isEmpty() || cpf.isEmpty() || endereco.isEmpty() || bairro.isEmpty()) {
+        if (nome.isEmpty() || cpf.isEmpty() || endereco.isEmpty() || bairro.isEmpty() || cidade.isEmpty() || uf.isEmpty() || cep.isEmpty() || telefone.isEmpty() || email.isEmpty()) {
             Cliente cliente = new Cliente();
-            switch (btnEnviar) {
+            switch (btnEnvia) {
                 case "Alterar":
                 case "Excluir":
                     try {
@@ -107,7 +107,7 @@ public class RegistroCliente extends HttpServlet {
             }
 
             request.setAttribute("cliente", cliente);
-            request.setAttribute("acao", btnEnviar);
+            request.setAttribute("acao", btnEnvia);
 
             request.setAttribute("msgError", "É necessário preencher todos os campos");
 
@@ -116,11 +116,12 @@ public class RegistroCliente extends HttpServlet {
 
         } else {
             
-             Cliente cliente = new Cliente(nome, cpf, endereco, bairro, cidade, uf, cep, telefone,email);
+             Cliente cliente = new Cliente(nome, cpf, endereco, bairro, cidade, uf, cep, telefone, email);
              ClienteDAO clienteDAO = new ClienteDAO();
+             cliente.setId(id);
 
             try {
-                switch (btnEnviar) {
+                switch (btnEnvia) {
                     case "Incluir":
                         clienteDAO.Inserir(cliente);
                         request.setAttribute("msgOperacaoRealizada", "Inclusão realizada com sucesso");
@@ -141,7 +142,7 @@ public class RegistroCliente extends HttpServlet {
 
             } catch (IOException | ServletException ex) {
                 System.out.println(ex.getMessage());
-                throw new RuntimeException("Falha em uma query para cadastro de usuario");
+                throw new RuntimeException("Falha em uma query para cadastro de cliente");
             } catch (Exception ex) {
                 Logger.getLogger(RegistrarController.class.getName()).log(Level.SEVERE, null, ex);
             }
