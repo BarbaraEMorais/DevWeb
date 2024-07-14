@@ -97,8 +97,7 @@ public class UsuarioDAO {
     }
 
     public ArrayList<Usuario> ListaDeUsuarios() {
-        ArrayList<Usuario> meusUsuarios
-                = new ArrayList();
+        ArrayList<Usuario> meusUsuarios = new ArrayList();
         Conexao conexao = new Conexao();
         try {
             String selectSQL = "SELECT * FROM funcionarios order by nome";
@@ -109,9 +108,9 @@ public class UsuarioDAO {
                 while (resultado.next()) {
                     Usuario usuario = new Usuario(resultado.getString("NOME"),
                             resultado.getString("CPF"),
-                            resultado.getString("papel"),
+                            resultado.getString("PAPEL"),
                             resultado.getString("SENHA"));
-                    usuario.setId(Integer.parseInt(resultado.getString("id")));
+                    usuario.setId(Integer.parseInt(resultado.getString("ID")));
                     meusUsuarios.add(usuario);
                 }
             }
