@@ -29,11 +29,10 @@
 
                             <%}
                             %>
-                            <%          if("0".equals(usuarioLogado.getPapel())){ %>
-                                <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Vendedores</a>
-                                <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Compradores</a>
-                                <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Administradores</a>
-                                <a class="nav-link" href="/aplicacaoMVC/RelatorioController?">Relatórios</a>
+                            <%          if("0".equals(usuarioLogado.getPapel())){ %>                          
+                                <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Funcionários</a>
+                                <a class="nav-link" href="/aplicacaoMVC/RelatorioController">Relatório Estoque</a>
+                                <a class="nav-link" href="/aplicacaoMVC/RelatorioVendaController">Relatório Venda</a>
 
                 <%    }%>
                 <a class="nav-link" href="/aplicacaoMVC/admin/logOut">Logout</a>
