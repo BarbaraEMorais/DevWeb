@@ -18,8 +18,8 @@
              <jsp:include page="../comum/menu.jsp" />
             <div class="mt-5">
 
-                <h1>Área Restrita</h1>
-                <h2>Lista de Produtos</h2>
+                <h2>Área Restrita</h2>
+                <h3>Lista de Produtos</h3>
 
                 <a href="/aplicacaoMVC/RegistroProduto?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
                 <div class="table-responsive">

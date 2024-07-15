@@ -18,8 +18,8 @@
              <jsp:include page="../../comum/menu.jsp" />
             <div class="mt-5">
 
-                <h1>Área Administrativa</h1>
-                <h2>Controle de Estoque</h2>
+                <h2>Área Administrativa</h2>
+                <h3>Controle de Estoque</h3>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -27,8 +27,8 @@
                             <tr>
                                 <th scope="col">Nome do Produto</th>
                                 <th scope="col">Descrição</th>
-                                <th scope="col">Preço de Compra</th>
-                                <th scope="col">Preço de Venda</th>
+                                <th scope="col">Preço de Compra (R$)</th>
+                                <th scope="col">Preço de Venda (R$)</th>
                                 <th scope="col">Quantidade Disponível</th>
                                 <th scope="col">Liberado para Venda</th>
                                 <th scope="col">ID categoria</th>    
@@ -37,8 +37,16 @@
                         <tbody>
                             <%
                                 ArrayList<Produto> listaProdutos = (ArrayList<Produto>) request.getAttribute("listaProdutos");
-                                             
+                                
+                                String liberado = "";
+                                
                                 for (Produto produto : listaProdutos) {
+                                
+                                    if("S".equals(produto.getLiberado_venda())){
+                                        liberado = "Sim";
+                                    }else{
+                                        liberado = "Não";
+                                    }
                                                                                                             
                                         out.println("<tr>");
                                         //out.println("<th>" + usuario.getId() + "</th>");
@@ -47,7 +55,7 @@
                                         out.println("<td>" + produto.getPreco_compra()+ "</td>");
                                         out.println("<td>" + produto.getPreco_venda()+ "</td>");
                                         out.println("<td>" + produto.getQuantidade_disponivel()+ "</td>");                                        
-                                        out.println("<td>" + produto.getLiberado_venda()+ "</td>");
+                                        out.println("<td>" + liberado + "</td>");
                                         out.println("<td>" + produto.getId_categoria()+ "</td>");
                                         out.println("</tr>");
                                 }

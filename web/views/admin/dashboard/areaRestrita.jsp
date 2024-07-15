@@ -15,14 +15,14 @@
             <jsp:include page="../../comum/menu.jsp" />
             <div class="mt-5">
 
-                <h1>Área Restrita</h1>
+                <h2>Área Restrita</h2>
                 <%
                     Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
-                    out.println("<h3>Usuário logado com sucesso</h3>");
-                    out.println("<h2>Nome: " + usuarioLogado.getNome() + "</h2>");
-                    if ("0".equals(usuarioLogado.getPapel())){out.println("<h2>Papel: Administrador</h2");}
-                    else if ("1".equals(usuarioLogado.getPapel())){out.println("<h2>Papel: Vendedor</h2");}
-                    else if ("2".equals(usuarioLogado.getPapel())){out.println("<h2>Papel: Comprador</h2");}
+                    out.println("<br><br>");
+                    out.println("<h4>Nome: " + usuarioLogado.getNome() + "</h4>");
+                    if ("0".equals(usuarioLogado.getPapel())){out.println("<h4>Cargo: Administrador</h4");}
+                    else if ("1".equals(usuarioLogado.getPapel())){out.println("<h4>Cargo: Vendedor</h4");}
+                    else if ("2".equals(usuarioLogado.getPapel())){out.println("<h4>Cargo: Comprador</h4");}
                     
                 %>
                

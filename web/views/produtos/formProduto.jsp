@@ -41,25 +41,25 @@
                     <input type="hidden" name="id" value="<%=produto.getId()%>" class="form-control">
                     <div class="mb-3">
                         <label for="nome_produto" class="form-label">Nome Produto</label>
-                        <input type="text" name="nome_produto" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getNome_produto()%>" class="form-control" placeholder="Seu papel">
-                    
+                        <input required type="text" name="nome_produto" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getNome_produto()%>" class="form-control" >
+                    place
                         <label for="descricao" class="form-label">Descrição</label>
-                        <input type="text" name="descricao" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getDescricao()%>" class="form-control" placeholder="Seu nome">
+                        <input required type="text" name="descricao" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getDescricao()%>" class="form-control" >
                     
                         <label for="preco_compra" class="form-label">Preco da Compra</label>
-                        <input type="text" name="preco_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_compra()%>" placeholder="999.999.999-99">
+                        <input required type="text" name="preco_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_compra()%>" >
                     
                         <label for="preco_venda" class="form-label">Preco Venda</label>
-                        <input type="text" name="preco_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_venda()%>" placeholder="999.999.999-99">
+                        <input required type="text" name="preco_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_venda()%>" >
                     
                         <label for="quantidade_disponivel" class="form-label">Quantidade Dísponivel</label>
-                        <input type="text" name="quantidade_disponivel" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getQuantidade_disponivel()%>" placeholder="999.999.999-99">
+                        <input required type="text" name="quantidade_disponivel" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getQuantidade_disponivel()%>">
                     
                         <label for="liberado_venda" class="form-label">Liberado para Venda</label>
-                        <input type="text" name="liberado_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getLiberado_venda()%>" placeholder="999.999.999-99">
+                        <input required type="text" name="liberado_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getLiberado_venda()%>">
                     
                         <label for="id_categoria" class="form-label">ID Categoria</label>
-                        <input type="text" name="id_categoria" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getId_categoria()%>" class="form-control">
+                        <input required type="text" name="id_categoria" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getId_categoria()%>" class="form-control">
                                        
                     </div>
                     <div class="row">

@@ -36,14 +36,27 @@
                             <%
                                 //falta diferenciar o tipo de lista de acordo com papel
                                 ArrayList<Usuario> listaUsuarios = (ArrayList<Usuario>) request.getAttribute("listaUsuarios");
-                             
+                                
+                                String papel = "";
+                                
                                 for (Usuario usuario : listaUsuarios) {
-                                    
+                                         
+                                        
+                                        if("0".equals(usuario.getPapel())){
+                                            papel = "Administrador";
+                                        }
+                                        else if("1".equals(usuario.getPapel())){
+                                            papel = "Vendedor";
+                                        }
+                                        else {
+                                            papel = "Comprador";
+                                        }
+                                        
                                         out.println("<tr>");
                                         //out.println("<th>" + usuario.getId() + "</th>");
                                         out.println("<td>" + usuario.getNome()+ "</td>");
                                         out.println("<td>" + usuario.getCpf()+ "</td>");
-                                        out.println("<td>" + usuario.getPapel()+ "</td>");
+                                        out.println("<td>" + papel + "</td>");
                                 
                                     
                                     %>

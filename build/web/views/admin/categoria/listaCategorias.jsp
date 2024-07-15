@@ -18,8 +18,8 @@
              <jsp:include page="../../comum/menu.jsp" />
             <div class="mt-5">
 
-                <h1>Área Restrita</h1>
-                <h2>Lista de Categorias</h2>
+                <h2>Área Restrita</h2>
+                <h3>Lista de Categorias</h3>
 
                 <a href="/aplicacaoMVC/admin/CategoriaController?acao=Incluir" class="mb-2 btn btn-primary">Incluir</a>
                 <div class="table-responsive">

@@ -18,15 +18,15 @@
              <jsp:include page="../../comum/menu.jsp" />
             <div class="mt-5">
 
-                <h1>Área Administrativa</h1>
-                <h2>Controle Vendas</h2>
+                <h2>Área Administrativa</h2>
+                <h3>Controle Vendas</h3>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Quantidade de vendas</th>
                                 <th scope="col">Data da venda</th>
+                                <th scope="col">Quantidade de vendas</th>                                
                                 <th scope="col">Valor da venda</th>
                                 <th scope="col">ID cliente</th>
                                 <th scope="col">ID produto</th>
@@ -39,10 +39,10 @@
                          
                                 for (Venda venda : listaVendas) {
                                                                                                             
-                                        out.println("<tr>");                                        
+                                        out.println("<tr>");  
+                                        out.println("<td>" + venda.getData_venda() + "</td>");
                                         //out.println("<th>" + usuario.getId() + "</th>");
                                         out.println("<td>" + venda.getQuantidade_venda()+ "</td>");
-                                        out.println("<td>" + venda.getData_venda()+ "</td>");
                                         out.println("<td>" + venda.getValor_venda()+ "</td>");
                                         out.println("<td>" + venda.getId_cliente()+ "</td>");
                                         out.println("<td>" + venda.getId_produto()+ "</td>");                                        

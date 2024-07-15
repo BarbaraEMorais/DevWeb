@@ -25,13 +25,13 @@
                         String acao = (String) request.getAttribute("acao");
                         switch (acao) {
                             case "Incluir":
-                                out.println("<h1>Incluir Categoria</h1>");
+                                out.println("<h4>Incluir Categoria</h4>");
                                 break;
                             case "Alterar":
-                                out.println("<h1>Alterar Categoria</h1>");
+                                out.println("<h4>Alterar Categoria</h4>");
                                 break;
                             case "Excluir":
-                                out.println("<h1>Excluir Categoria</h1>");
+                                out.println("<h4>Excluir Categoria</h4>");
                                 break;
                         }
 
@@ -46,7 +46,7 @@
                         <input type="hidden" name="id" value="<%=categoria.getId()%>" class="form-control">
                         <div class="mb-3">
                             <label for="descricao" class="form-label" >Descrição</label>
-                            <input type="text" name="descricao" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=categoria.getDescricao()%>" class="form-control">
+                            <input required type="text" name="descricao" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=categoria.getDescricao()%>" class="form-control">
                         </div>
                         <div>
                             <input type="submit" name="btEnviar" value="<%=acao%>" class="btn btn-primary">

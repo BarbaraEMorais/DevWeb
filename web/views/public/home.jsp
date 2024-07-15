@@ -27,10 +27,12 @@
                     if(usuarioLogado!=null){
                     out.println("<h2>Olá " + usuarioLogado.getNome() + ", seja bem-vindo!</h2>");
                     if ("0".equals(usuarioLogado.getPapel())){
-                        out.println("<h4>Papel: Administrador</h4");                    
+                        out.println("<h4>Cargo: Administrador</h4>");
+                        out.println("<p><br><br>Você conseguirá fazer os cadastros de seus funcionários e analisar relatórios de estoque e venda, basta seguir as indicações nos links do menu superior.</p>");
+                        
                     }
-                    else if ("1".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Vendedor</h4");}
-                    else if ("2".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Comprador</h4");}
+                    else if ("1".equals(usuarioLogado.getPapel())){out.println("<h4>Cargo: Vendedor</h4");}
+                    else if ("2".equals(usuarioLogado.getPapel())){out.println("<h4>Cargo: Comprador</h4");}
                     }
                 %>
                 

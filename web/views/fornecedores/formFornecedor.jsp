@@ -23,13 +23,13 @@
                         String acao = (String) request.getAttribute("acao");
                         switch (acao) {
                             case "Incluir":
-                                out.println("<h1>Incluir Fornecedor</h1>");
+                                out.println("<h4>Incluir Fornecedor</h4>");
                                 break;
                             case "Alterar":
-                                out.println("<h1>Alterar Fornecedor</h1>");
+                                out.println("<h4>Alterar Fornecedor</h4>");
                                 break;
                             case "Excluir":
-                                out.println("<h1>Excluir Fornecedor</h1>");
+                                out.println("<h4>Excluir Fornecedor</h4>");
                                 break;
                         }
                     String msgError = (String) request.getAttribute("msgError");
@@ -41,13 +41,13 @@
                     <input type="hidden" name="id" value="<%=fornecedor.getId()%>" class="form-control">
                     <div class="mb-3">
                         <label for="razao_social" class="form-label">Razão Social</label>
-                        <input type="text" name="razao_social" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=fornecedor.getRazaoSocial()%>" class="form-control" placeholder="Seu papel">
+                        <input type="text" name="razao_social" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=fornecedor.getRazaoSocial()%>" class="form-control">
                     
                         <label for="cnpj" class="form-label">CNPJ</label>
-                        <input type="text" name="cnpj" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=fornecedor.getCnpj()%>" class="form-control" placeholder="Seu nome">
+                        <input type="text" name="cnpj" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=fornecedor.getCnpj()%>" class="form-control" >
                     
                         <label for="endereco" class="form-label">Endereço</label>
-                        <input type="text" name="endereco" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=fornecedor.getEndereco()%>" placeholder="999.999.999-99">
+                        <input type="text" name="endereco" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=fornecedor.getEndereco()%>" >
                     
                         <label for="bairro" class="form-label">Bairro</label>
                         <input type="text" name="bairro" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=fornecedor.getBairro()%>" class="form-control">

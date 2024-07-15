@@ -23,13 +23,13 @@
                         String acao = (String) request.getAttribute("acao");
                         switch (acao) {
                             case "Incluir":
-                                out.println("<h1>Incluir Compra</h1>");
+                                out.println("<h4>Incluir Compra</h4>");
                                 break;
                             case "Alterar":
-                                out.println("<h1>Alterar Compra</h1>");
+                                out.println("<h4>Alterar Compra</h4>");
                                 break;
                             case "Excluir":
-                                out.println("<h1>Excluir Compra</h1>");
+                                out.println("<h4>Excluir Compra</h4>");
                                 break;
                         }
                     String msgError = (String) request.getAttribute("msgError");
@@ -41,22 +41,22 @@
                     <input type="hidden" name="id" value="<%=compra.getId()%>" class="form-control">
                     <div class="mb-3">
                         <label for="quantidade_compra" class="form-label">Quantidade de Compras</label>
-                        <input type="number" name="quantidade_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getQuantidade_compra()%>" class="form-control" placeholder="Seu papel">
+                        <input required type="number" name="quantidade_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getQuantidade_compra()%>" class="form-control">
                     
                         <label for="data_compra" class="form-label">Data da Compra</label>
-                        <input type="text" name="data_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getData_compra()%>" class="form-control" placeholder="Seu nome">
+                        <input required type="text" name="data_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getData_compra()%>" class="form-control" >
                     
                         <label for="valor_compra" class="form-label">Valor</label>
-                        <input type="number" name="valor_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=compra.getValor_compra()%>" placeholder="999.999.999-99">
+                        <input required type="number" name="valor_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=compra.getValor_compra()%>" >
                     
                         <label for="id_fornecedor" class="form-label">ID Fornecedor</label>
-                        <input type="number" name="id_fornecedor" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_fornecedor()%>" class="form-control">
+                        <input required type="number" name="id_fornecedor" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_fornecedor()%>" class="form-control">
                     
                         <label for="id_produto" class="form-label">ID produto</label>
-                        <input type="number" name="id_produto" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_produto()%>" class="form-control">
+                        <input required type="number" name="id_produto" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_produto()%>" class="form-control">
                     
                         <label for="id_funcionario" class="form-label">ID funcionario</label>
-                        <input type="number" name="id_funcionario" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_funcionario()%>" class="form-control">
+                        <input required type="number" name="id_funcionario" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=compra.getId_funcionario()%>" class="form-control">
                     
                     </div>
                     <div class="row">
