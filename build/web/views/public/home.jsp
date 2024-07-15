@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="entidade.Produto"%>
 <%@page import="entidade.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,7 +26,9 @@
                 <%  
                     if(usuarioLogado!=null){
                     out.println("<h2>Olá " + usuarioLogado.getNome() + ", seja bem-vindo!</h2>");
-                    if ("0".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Administrador</h4");}
+                    if ("0".equals(usuarioLogado.getPapel())){
+                        out.println("<h4>Papel: Administrador</h4");                    
+                    }
                     else if ("1".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Vendedor</h4");}
                     else if ("2".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Comprador</h4");}
                     }

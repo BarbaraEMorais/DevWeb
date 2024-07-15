@@ -100,11 +100,9 @@ public class RegistroProduto extends HttpServlet {
 
         RequestDispatcher rd;
         
-        System.out.println("oiiiiiiiiiiiiiii");
         
         if (nome_produto.isEmpty() || descricao.isEmpty() || preco_compra == -1.0 || preco_venda == -1.0 ||quantidade_disponivel == -1 || liberado_venda.isEmpty() || id_categoria == -1 ) {
             Produto produto = new Produto();
-            System.out.println("nao deveria entrar aq");
             switch (btnEnviar) {
                 case "Alterar":
                 case "Excluir":

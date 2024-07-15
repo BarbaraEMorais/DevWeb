@@ -4,52 +4,57 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/vendas/listaVendas.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/relatorios/relatorioEstoque.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroCliente.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroCompra.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/HomeController.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/fornecedores/formFornecedor.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/compras/listaCompras.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/produtos/listaProdutos.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/dashboard/areaRestrita.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Usuario.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/clientes/formClientes.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Cliente.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/fornecedores/listaFornecedores.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/VendaDAO.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/comum/menu.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Fornecedor.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/compras/formCompras.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/Conexao.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistrarController.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/vendas/formVendas.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/MostrarComentarios.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/admin/DashboardController.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/ComentarioDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/public/comentarios.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/clientes/listaClientes.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/admin/LogoutController.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/AutenticaController.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/comum/showMessage.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/Dao.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Categoria.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/CompraDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/produtos/newjsp.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/ProdutoDAO.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/public/home.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/admin/CategoriaController.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/FornecedorDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Venda.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/registro/formRegistro.jsp</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/CategoriaDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/categoria/formCategoria.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RelatorioController.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/UsuarioDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/ClienteDAO.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/filtro/filtroRestrito.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/registro/listaUsuarios.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroVenda.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Comentario.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroFornecedor.java</file>
-            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/categoria/listaCategorias.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Compra.java</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/index.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Produto.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/HomeController.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/fornecedores/formFornecedor.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/clientes/formClientes.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/fornecedores/listaFornecedores.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/VendaDAO.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Fornecedor.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroProduto.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/vendas/formVendas.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/MostrarComentarios.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/ComentarioDAO.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/public/comentarios.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/admin/LogoutController.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/comum/showMessage.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/Dao.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Categoria.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/admin/CategoriaController.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/entidade/Venda.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/CategoriaDAO.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/produtos/formProduto.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/categoria/formCategoria.jsp</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/model/ClienteDAO.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/filtro/filtroRestrito.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/src/java/controller/RegistroFornecedor.java</file>
+            <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/admin/categoria/listaCategorias.jsp</file>
             <file>file:/home/barbara_morais/Documentos/Dev_Web/aplicacaoMVC/web/views/autenticacao/formLogin.jsp</file>
         </group>
     </open-files>

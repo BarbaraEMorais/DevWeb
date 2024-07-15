@@ -33,13 +33,14 @@
                                 <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Vendedores</a>
                                 <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Compradores</a>
                                 <a class="nav-link" href="/aplicacaoMVC/RegistrarController?acao=Listar">Administradores</a>
+                                <a class="nav-link" href="/aplicacaoMVC/RelatorioController?">Relatórios</a>
 
                 <%    }%>
                 <a class="nav-link" href="/aplicacaoMVC/admin/logOut">Logout</a>
 
                 <%} else { %>
                 
-                            <a class="nav-link" href="/aplicacaoMVC/MostrarComentarios">Coment&aacute;rios</a>
+                <!-- comment  <a class="nav-link" href="/aplicacaoMVC/MostrarComentarios">Coment&aacute;rios</a>-->
                             <a class="nav-link" href="/aplicacaoMVC/AutenticaController?acao=Login">Login</a>
                 <%    }
                     }%>
