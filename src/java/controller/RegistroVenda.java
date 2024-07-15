@@ -69,7 +69,7 @@ public class RegistroVenda extends HttpServlet {
                 request.setAttribute("msgError", "");
                 request.setAttribute("acao", acao);
 
-                rd = request.getRequestDispatcher("/views/vandas/formVendas.jsp");
+                rd = request.getRequestDispatcher("/views/vendas/formVendas.jsp");
                 rd.forward(request, response);
         }
 
@@ -79,25 +79,26 @@ public class RegistroVenda extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        System.out.println("Entrou na budega");
+        
         int id = Integer.parseInt(request.getParameter("id"));
-        //System.out.println(id);
+        System.out.println(id);
+        
         int quantidade_venda = Integer.parseInt(request.getParameter("quantidade_venda"));
-        Date data_venda;
-        try {
-            data_venda = dateFormat.parse(request.getParameter("data_venda"));
-        } catch (ParseException ex) {
-            Logger.getLogger(RegistroVenda.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                
+        String data_venda = request.getParameter("data_venda");
         float valor_venda = Float.parseFloat(request.getParameter("valor_venda"));
         int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
         int id_produto = Integer.parseInt(request.getParameter("id_produto"));
         int id_funcionario = Integer.parseInt(request.getParameter("id_funcionario"));
         String btnEnviar = request.getParameter("btnEnviar");
+        
+        System.out.println("Valoressss");
+        System.out.println(id_funcionario);
 
         RequestDispatcher rd;
 
-        if (data_venda == null ||quantidade_venda == -1 || valor_venda == -1.0 ||id_cliente == -1 ||id_produto == -1 ) {
+        if (data_venda.isEmpty() || quantidade_venda == -1 || valor_venda == -1.0 ||id_cliente == -1 ||id_produto == -1 ) {
             Venda venda = new Venda();
             switch (btnEnviar) {
                 case "Alterar":

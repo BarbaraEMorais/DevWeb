@@ -40,23 +40,23 @@
                 <form action="/aplicacaoMVC/RegistroVenda" method="POST">
                     <input type="hidden" name="id" value="<%=venda.getId()%>" class="form-control">
                     <div class="mb-3">
-                        <label for="papel" class="form-label">Quantidade de vendas</label>
-                        <input type="text" name="papel" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getQuantidade_venda()%>" class="form-control" placeholder="Seu papel">
+                        <label for="quantidade_venda" class="form-label">Quantidade de vendas</label>
+                        <input type="number" name="quantidade_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getQuantidade_venda()%>" class="form-control" placeholder="Seu papel">
                     
-                        <label for="cpf" class="form-label">Data da venda</label>
-                        <input type="text" name="nome" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getData_venda()%>" class="form-control" placeholder="Seu nome">
+                        <label for="data_venda" class="form-label">Data da venda</label>
+                        <input type="text" name="data_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getData_venda()%>" class="form-control" placeholder="Seu nome">
                     
-                        <label for="cpf" class="form-label">Valor</label>
-                        <input type="text" name="cpf" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=venda.getValor_venda()%>" placeholder="999.999.999-99">
+                        <label for="valor_venda" class="form-label">Valor</label>
+                        <input type="number" name="valor_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=venda.getValor_venda()%>" placeholder="999.999.999-99">
                     
-                        <label for="senha" class="form-label">ID cliente</label>
-                        <input type="password" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_cliente()%>" class="form-control">
+                        <label for="id_cliente" class="form-label">ID cliente</label>
+                        <input type="number" name="id_cliente" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_cliente()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">ID produto</label>
-                        <input type="password" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_produto()%>" class="form-control">
+                        <label for="id_produto" class="form-label">ID produto</label>
+                        <input type="number" name="id_produto" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_produto()%>" class="form-control">
                     
-                        <label for="senha" class="form-label">ID funcionario</label>
-                        <input type="password" name="senha" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_funcionario()%>" class="form-control">
+                        <label for="id_funcionario" class="form-label">ID funcionario</label>
+                        <input type="number" name="id_funcionario" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=venda.getId_funcionario()%>" class="form-control">
                     
                     </div>
                     <div class="row">

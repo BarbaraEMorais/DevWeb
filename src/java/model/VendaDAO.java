@@ -28,7 +28,7 @@ public class VendaDAO {
             PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO vendas (quantidade_venda, data_venda, valor_venda, id_cliente, id_produto, id_funcionario)"
                     + " VALUES (?,?,?,?,?,?)");
             sql.setInt(1, venda.getQuantidade_venda());
-            sql.setDate(2, (Date) venda.getData_venda());
+            sql.setString(2, venda.getData_venda());
             sql.setFloat(3, venda.getValor_venda());
             sql.setInt(4, venda.getId_cliente());
             sql.setInt(5, venda.getId_produto());
@@ -53,7 +53,7 @@ public class VendaDAO {
                 while (resultado.next()) {
                     venda.setId(Integer.parseInt(resultado.getString("ID")));
                     venda.setQuantidade_venda(resultado.getInt("quantidade_venda"));
-                    venda.setData_venda(resultado.getDate("data_venda"));
+                    venda.setData_venda(resultado.getString("data_venda"));
                     venda.setValor_venda(resultado.getFloat("valor_venda"));
                     venda.setId_cliente(resultado.getInt("id_cliente"));
                     venda.setId_produto(resultado.getInt("id_produto"));
@@ -63,6 +63,7 @@ public class VendaDAO {
             return venda;
 
         } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException("Query de select (get) incorreta");
         } finally {
             conexao.closeConexao();
@@ -74,7 +75,7 @@ public class VendaDAO {
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("UPDATE vendas SET quantidade_venda = ?, data_venda = ?, valor_venda = ?, id_cliente = ?, id_produto = ?, id_funcionario = ?  WHERE ID = ? ");
             sql.setInt(1, venda.getQuantidade_venda());
-            sql.setDate(2, (Date) venda.getData_venda());
+            sql.setString(2, venda.getData_venda());
             sql.setFloat(3, venda.getValor_venda());
             sql.setInt(4, venda.getId_cliente());
             sql.setInt(5, venda.getId_produto());
@@ -107,14 +108,14 @@ public class VendaDAO {
         ArrayList<Venda> meusVendas = new ArrayList();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT * FROM vendas order by nome";
+            String selectSQL = "SELECT * FROM vendas order by data_venda";
             PreparedStatement preparedStatement;
             preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado != null) {
                 while (resultado.next()) {
                     Venda venda = new Venda(resultado.getInt("quantidade_venda"),
-                            resultado.getDate("data_venda"),
+                            resultado.getString("data_venda"),
                             resultado.getFloat("valor_venda"),
                             resultado.getInt("id_cliente"),
                             resultado.getInt("id_produto"),
@@ -124,6 +125,7 @@ public class VendaDAO {
                 }
             }
         } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException("Query de select (ListaDeVendas) incorreta");
         } finally {
             conexao.closeConexao();
