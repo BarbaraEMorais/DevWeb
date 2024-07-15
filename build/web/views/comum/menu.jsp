@@ -18,7 +18,8 @@
                             <% if("2".equals(usuarioLogado.getPapel())){%>
                                 <a class="nav-link" href="/aplicacaoMVC/admin/CategoriaController?acao=Listar">Categorias</a>
                                 <a class="nav-link" href="/aplicacaoMVC/RegistroFornecedor?acao=Listar">Fornecedores</a>                       
-                                <a class="nav-link" href="/aplicacaoMVC/RegistroCompra?acao=Listar">Compras</a>                       
+                                <a class="nav-link" href="/aplicacaoMVC/RegistroCompra?acao=Listar">Compras</a>
+                                <a class="nav-link" href="/aplicacaoMVC/RegistroProduto?acao=Listar">Produtos</a>
 
                             <%}%>
                             
