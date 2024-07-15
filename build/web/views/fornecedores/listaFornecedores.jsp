@@ -26,8 +26,8 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">CPF</th>
+                                <th scope="col">Razão Social</th>
+                                <th scope="col">CNPJ</th>
                                 <th scope="col">Endereço</th>
                                 <th scope="col">Bairro</th>
                                 <th scope="col">Cidade</th>

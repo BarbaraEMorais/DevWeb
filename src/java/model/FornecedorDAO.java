@@ -17,8 +17,9 @@ public class FornecedorDAO {
     
     public void Inserir(Fornecedor fornecedor) throws Exception {
         Conexao conexao = new Conexao();
+        System.out.println("entrei na budega");
         try {
-            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO Fornecedores (razao_social, cnpj, endereco, bairro, cidade, uf, cep, telefone, email)"
+            PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO fornecedores (razao_social, cnpj, endereco, bairro, cidade, uf, cep, telefone, email)"
                     + " VALUES (?,?,?,?,?,?,?,?,?)");
             sql.setString(1, fornecedor.getRazaoSocial());
             sql.setString(2, fornecedor.getCnpj());
@@ -30,8 +31,10 @@ public class FornecedorDAO {
             sql.setString(8, fornecedor.getTelefone());
             sql.setString(9, fornecedor.getEmail());
             sql.executeUpdate();
-
+            
+            
         } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException();
         } finally {
             conexao.closeConexao();
@@ -109,7 +112,7 @@ public class FornecedorDAO {
         ArrayList<Fornecedor> meusFornecedores = new ArrayList();
         Conexao conexao = new Conexao();
         try {
-            String selectSQL = "SELECT * FROM fornecedores order by nome";
+            String selectSQL = "SELECT * FROM fornecedores order by razao_social";
             PreparedStatement preparedStatement;
             preparedStatement = conexao.getConexao().prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();

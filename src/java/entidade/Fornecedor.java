@@ -26,17 +26,13 @@ public class Fornecedor {
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.bairro = bairro;
-        this.cep = cep;
         this.cidade = cidade;
         this.uf = uf;
+        this.cep = cep;
         this.telefone = telefone;
         this.email = email;
     }
 
-    public Fornecedor(String razao_social, String email) {
-        this.razao_social = razao_social;
-        this.email = email;
-    }
 
     public Fornecedor() {
         this.id = 0;
@@ -44,9 +40,9 @@ public class Fornecedor {
         this.cnpj = "";
         this.endereco = "";
         this.bairro = "";
-        this.cep = "";
         this.cidade = "";
         this.uf = "";
+        this.cep = "";
         this.telefone = "";
         this.email = "";
     }
