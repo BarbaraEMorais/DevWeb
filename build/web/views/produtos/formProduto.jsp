@@ -46,11 +46,11 @@
                         <label for="descricao" class="form-label">Descrição</label>
                         <input type="text" name="descricao" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getDescricao()%>" class="form-control" placeholder="Seu nome">
                     
-                        <label for="preco_venda" class="form-label">Preco da Venda</label>
-                        <input type="text" name="preco_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_venda()%>" placeholder="999.999.999-99">
-                    
-                        <label for="preco_compra" class="form-label">Preco Compra</label>
+                        <label for="preco_compra" class="form-label">Preco da Compra</label>
                         <input type="text" name="preco_compra" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_compra()%>" placeholder="999.999.999-99">
+                    
+                        <label for="preco_venda" class="form-label">Preco Venda</label>
+                        <input type="text" name="preco_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getPreco_venda()%>" placeholder="999.999.999-99">
                     
                         <label for="quantidade_disponivel" class="form-label">Quantidade Dísponivel</label>
                         <input type="text" name="quantidade_disponivel" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getQuantidade_disponivel()%>" placeholder="999.999.999-99">
@@ -59,9 +59,8 @@
                         <input type="text" name="liberado_venda" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=produto.getLiberado_venda()%>" placeholder="999.999.999-99">
                     
                         <label for="id_categoria" class="form-label">ID Categoria</label>
-                        <input type="password" name="id_categoria" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getId_categoria()%>" class="form-control">
-                    
-                        
+                        <input type="text" name="id_categoria" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=produto.getId_categoria()%>" class="form-control">
+                                       
                     </div>
                     <div class="row">
                         <div class="col-sm-2">

@@ -10,7 +10,7 @@ public class Produto {
     private int quantidade_disponivel; 
     private String liberado_venda; 
     private int id_categoria;
-
+    
     public Produto(String nome_produto, String descricao, float preco_compra, float preco_venda, int quantidade_disponivel, String liberado_venda, int id_categoria) {
         this.nome_produto = nome_produto;
         this.descricao = descricao; 

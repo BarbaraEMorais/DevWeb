@@ -82,7 +82,7 @@ public class RegistroProduto extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         System.out.println(id);
         
-        String nome_produto = request.getParameter("quantidade_produto");
+        String nome_produto = request.getParameter("nome_produto");
         String descricao = request.getParameter("descricao"); 
         float preco_compra = Float.parseFloat(request.getParameter("preco_compra"));
         float preco_venda = Float.parseFloat(request.getParameter("preco_venda"));
@@ -90,11 +90,21 @@ public class RegistroProduto extends HttpServlet {
         String liberado_venda =request.getParameter("liberado_venda"); 
         int id_categoria = Integer.parseInt(request.getParameter("id_categoria"));      
         String btnEnviar = request.getParameter("btnEnviar");
+        
+        System.out.println(quantidade_disponivel);
+        System.out.println(descricao);
+        System.out.println(nome_produto);
+        System.out.println(preco_compra);
+        System.out.println(preco_venda);
+        System.out.println(id_categoria);
 
         RequestDispatcher rd;
-
+        
+        System.out.println("oiiiiiiiiiiiiiii");
+        
         if (nome_produto.isEmpty() || descricao.isEmpty() || preco_compra == -1.0 || preco_venda == -1.0 ||quantidade_disponivel == -1 || liberado_venda.isEmpty() || id_categoria == -1 ) {
             Produto produto = new Produto();
+            System.out.println("nao deveria entrar aq");
             switch (btnEnviar) {
                 case "Alterar":
                 case "Excluir":
@@ -114,14 +124,14 @@ public class RegistroProduto extends HttpServlet {
 
             request.setAttribute("msgError", "É necessário preencher todos os campos");
 
-            rd = request.getRequestDispatcher("/views/Produtos/formProdutos.jsp");
+            rd = request.getRequestDispatcher("/views/produtos/formProduto.jsp");
             rd.forward(request, response);
 
         } else {
-            
-             Produto produto = new Produto(nome_produto, descricao, preco_compra, preco_venda, quantidade_disponivel, liberado_venda, id_categoria);
-             ProdutoDAO produtoDAO = new ProdutoDAO();
-             produto.setId(id);
+            System.out.println("entrei aqui");
+            Produto produto = new Produto(nome_produto, descricao, preco_compra, preco_venda, quantidade_disponivel, liberado_venda, id_categoria);
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produto.setId(id);
 
             try {
                 switch (btnEnviar) {

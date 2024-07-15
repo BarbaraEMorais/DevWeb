@@ -20,6 +20,7 @@ public class ProdutoDAO {
         try {
             PreparedStatement sql = conexao.getConexao().prepareStatement("INSERT INTO produtos (nome_produto, descricao, preco_compra, preco_venda, quantidade_disponivel, liberado_venda, id_categoria)"
                     + " VALUES (?,?,?,?,?,?,?)");
+                              
             sql.setString(1, produto.getNome_produto());
             sql.setString(2, produto.getDescricao());
             sql.setFloat(3, produto.getPreco_compra());
@@ -76,7 +77,7 @@ public class ProdutoDAO {
             sql.setInt(5, produto.getQuantidade_disponivel());
             sql.setString(6, produto.getLiberado_venda());
             sql.setInt(7, produto.getId_categoria());                     
-            sql.setInt(10, produto.getId());
+            sql.setInt(8, produto.getId());
             sql.executeUpdate();
 
         } catch (SQLException e) {
