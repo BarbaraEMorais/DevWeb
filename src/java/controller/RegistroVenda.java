@@ -1,5 +1,7 @@
 /*package controller;*/
-
+import java.text.ParseException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import entidade.Venda;
 import java.io.IOException;
@@ -76,20 +78,26 @@ public class RegistroVenda extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
         int id = Integer.parseInt(request.getParameter("id"));
         //System.out.println(id);
-        String quantidade_venda = request.getParameter("quantidade_venda");
-        String data_venda = request.getParameter("data_venda");
-        String valor_venda = request.getParameter("valor_venda");
-        String id_cliente = request.getParameter("id_cliente");
-        String id_produto = request.getParameter("id_produto");
-        String id_funcionario = request.getParameter("id_funcionario");
+        int quantidade_venda = Integer.parseInt(request.getParameter("quantidade_venda"));
+        Date data_venda;
+        try {
+            data_venda = dateFormat.parse(request.getParameter("data_venda"));
+        } catch (ParseException ex) {
+            Logger.getLogger(RegistroVenda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        float valor_venda = Float.parseFloat(request.getParameter("valor_venda"));
+        int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+        int id_produto = Integer.parseInt(request.getParameter("id_produto"));
+        int id_funcionario = Integer.parseInt(request.getParameter("id_funcionario"));
         String btnEnviar = request.getParameter("btnEnviar");
 
         RequestDispatcher rd;
 
-        if (quantidade_venda.isEmpty() || data_venda.isEmpty() || valor_venda.isEmpty() || id_cliente.isEmpty() || id_produto.isEmpty() || id_funcionario.isEmpty()) {
+        if (data_venda == null ||quantidade_venda == -1 || valor_venda == -1.0 ||id_cliente == -1 ||id_produto == -1 ) {
             Venda venda = new Venda();
             switch (btnEnviar) {
                 case "Alterar":

@@ -41,13 +41,13 @@
                     <input type="hidden" name="id" value="<%=cliente.getId()%>" class="form-control">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
-                        <input type="text" name="papel" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getNome()%>" class="form-control" placeholder="Seu papel">
+                        <input type="text" name="nome" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getNome()%>" class="form-control" placeholder="Seu nome">
                     
                         <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" name="nome" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCpf()%>" class="form-control" placeholder="Seu nome">
+                        <input type="text" name="cpf" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getCpf()%>" class="form-control" placeholder="999.999.999-99">
                     
                         <label for="endereco" class="form-label">Endereço</label>
-                        <input type="text" name="endereco" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=cliente.getEndereco()%>" placeholder="999.999.999-99">
+                        <input type="text" name="endereco" <%= acao.equals("Excluir") ? "Readonly" : ""%> class="form-control" value="<%=cliente.getEndereco()%>" placeholder="">
                     
                         <label for="bairro" class="form-label">Bairro</label>
                         <input type="text" name="bairro" <%= acao.equals("Excluir") ? "Readonly" : ""%> value="<%=cliente.getBairro()%>" class="form-control">

@@ -21,7 +21,7 @@ public class Cliente {
     private String telefone;
     private String email;
 
-    public Cliente(String nome, String cpf, String endereco, String bairro, String cep, String cidade, String uf, String telefone, String email) {
+    public Cliente(String nome, String cpf, String endereco, String bairro, String cidade, String uf, String cep, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;

@@ -31,8 +31,8 @@ public class VendaDAO {
             sql.setDate(2, (Date) venda.getData_venda());
             sql.setFloat(3, venda.getValor_venda());
             sql.setInt(4, venda.getId_cliente());
-            sql.setInt(4, venda.getId_produto());
-            sql.setInt(4, venda.getId_funcionario());
+            sql.setInt(5, venda.getId_produto());
+            sql.setInt(6, venda.getId_funcionario());
             sql.executeUpdate();
 
         } catch (SQLException e) {
