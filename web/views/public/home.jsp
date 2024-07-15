@@ -1,3 +1,4 @@
+<%@page import="entidade.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,9 +14,22 @@
         <div class="container">
             <jsp:include page="../comum/menu.jsp"/>
             <div class="mt-5">
-                <h3>Seja Bem-vindo ao blog Bárbara Linda</h3>
-                <h4>Aqui comentamos sobre vários assuntos</h4>
-                <button>a</button>
+                <%Usuario usuarioLogado = (Usuario) session.getAttribute("usuario");
+                    if(usuarioLogado==null){
+                %>
+                <h3>Seja Bem-vindo ao sistema de vendas!</h3>
+                <h4>Aqui comentamos sobre vários assuntos.</h4>
+                
+                <%}%>
+                <%  
+                    if(usuarioLogado!=null){
+                    out.println("<h2>Olá " + usuarioLogado.getNome() + ", seja bem-vindo!</h2>");
+                    if ("0".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Administrador</h4");}
+                    else if ("1".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Vendedor</h4");}
+                    else if ("2".equals(usuarioLogado.getPapel())){out.println("<h4>Papel: Comprador</h4");}
+                    }
+                %>
+                
             </div>
         </div>
        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
